@@ -1,7 +1,8 @@
 // app/projects/school/page.tsx
+import { getProjects } from "@/lib/projects-db";
+
 export default async function SchoolProjectsPage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/projects?type=school`);
-  const projects = await res.json();
+  const projects = getProjects("school");
 
   return (
     <div>
